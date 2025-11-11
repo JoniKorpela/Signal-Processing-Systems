@@ -87,5 +87,12 @@ end
 %
 %%%%%%%%%%%%%%%%%%
 function [w_uint,w_approx] = compute_qweights(weights,Nbits,s,zeropt)
-    [w_uint, w_approx] = quantizew(weights, Nbits, s, zeropt);
+    % [w_uint_ref, w_approx_ref] = quantizew(weights, Nbits, s, zeropt);
+    min_val = 0;
+    max_val = (2^Nbits) - 1;
+    w_uint = round(weights ./ s) + zeropt;
+    w_uint(w_uint < min_val) = min_val;
+    w_uint(w_uint > max_val) = max_val;
+    w_approx = (w_uint - zeropt) .* s;
+
 end
