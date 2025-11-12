@@ -87,8 +87,8 @@ Hd2 = dfilt.dffir(b);
 % end generated code
 
 Hdq2 = dfilt.dffir;
-quantized_len = 10;
-Hdq2.Numerator = fi(Hd.Numerator,1,quantized_len,quantized_len - 1);
+quantized_len = 15;
+Hdq2.Numerator = fi(Hd2.Numerator,1,quantized_len,quantized_len - 1);
 
 fprintf('There are %d coeffients in the filter\n', length(b))
 fprintf('The sp.n format of the coefficients is s%d.%d\n', quantized_len, quantized_len - 1)
