@@ -1,0 +1,48 @@
+% group 2 params
+phi_0 = 8.0;     % Base angle [deg] 
+N = 10;          % Number of angles
+d_max = 1.0e-3;  % Maximum error
+
+% group 2 coords
+phi = -164.9;    % Angle [deg]
+x = 5.25;        % x coordinate
+y = 2.75;        % y coordinate
+
+% initialize
+phi_rad = deg2rad(phi);
+
+if phi_rad < 0
+    dinit = -1;
+else
+    dinit = 1;
+end
+
+x0 = -dinit * y;
+y0 = dinit * x;
+z0 = phi_rad - dinit * pi / 2;
+
+fprintf('x0: %.4f, y0: %.4f, z0: %.4f\n', x0, y0, z0);
+
+% create unit circle
+theta = linspace(0, 2*pi, 300);
+xc = cos(theta);
+yc = sin(theta);
+
+% point from angle z0
+xa = cos(z0);
+ya = sin(z0);
+
+% plot
+figure; hold on; axis equal;
+
+plot(xc, yc, 'k-', 'LineWidth', 1.2);      % unit circle
+plot([0 xu], [0 yu], 'b-', 'LineWidth', 1); % normalized CORDIC vector
+plot(xu, yu, 'bo', 'MarkerFaceColor', 'b'); % vector tip
+
+plot([0 xa], [0 ya], 'r--');               % angle direction
+plot(xa, ya, 'ro', 'MarkerFaceColor','r'); % angle tip
+
+grid on;
+xlabel('x');
+ylabel('y');
+title('CORDIC Initialization on Unit Circle');
