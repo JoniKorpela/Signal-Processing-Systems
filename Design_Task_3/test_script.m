@@ -106,4 +106,3 @@ if max_error >= d_max
     fprintf('Maximum error exceeded!\n');
 end
 
-[xN, yN, zN, AN] = ucordic(circular, rotation, )
