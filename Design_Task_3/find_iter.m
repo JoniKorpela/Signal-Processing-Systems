@@ -30,7 +30,7 @@ for n = 0:N-1
     phi = deg2rad(phi_deg);
     phi = mod(phi + pi, 2*pi) - pi;
     
-    % simple initialization (no init-step)
+    
     if phi < 0
         d_init = -1;
     else
