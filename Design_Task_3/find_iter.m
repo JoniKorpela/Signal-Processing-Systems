@@ -25,7 +25,6 @@ verbose = false;
 
 for n = 0:N-1
     
-    % inside for n = 0:N-1
     phi_deg = phi_0 + n*delta_phi;
     phi = deg2rad(phi_deg);
     phi = mod(phi + pi, 2*pi) - pi;
