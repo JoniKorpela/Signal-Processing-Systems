@@ -1,0 +1,18 @@
+x = 10;
+y = 10;
+
+
+
+
+for x = 0:1:100
+    for y = 0:1:100
+        N_iter = 6;
+        pass = CORDIC_3(x, y, N_iter)
+        if 
+            while pass == false
+                N_iter = N_iter + 1;
+                pass = CORDIC_3(x, y, N_iter)
+            end
+        end
+    end
+end
