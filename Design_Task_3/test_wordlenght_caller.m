@@ -3,11 +3,11 @@ clc;
 clear;
 
 % sweep
-xy_p_values = 10:20;   % total bits for x,y
-xy_n_values = 8:16;    % fractional bits for x,y
+xy_p_values = 8:15;   % total bits for x,y
+xy_n_values = 8:15;    % fractional bits for x,y
 
-z_p_values  = 10:20;   % total bits for angle z
-z_n_values  = 8:16;    % fractional bits for angle z
+z_p_values  = 8:15;   % total bits for angle z
+z_n_values  = 8:15;    % fractional bits for angle z
 
 best = [];  % store best configuration
 
