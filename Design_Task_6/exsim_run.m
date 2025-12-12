@@ -24,11 +24,11 @@
 % << Examples >>
 %    exsim_run(300,150,0.001)
 
-function exsim_run(L,D,step_size) %#ok<INUSD>
+function [error] = exsim_run(L,D,step_size) %#ok<INUSD>
         
     stop_time = 1.0;
     options = simset('SrcWorkspace','current');
     sim('exsim',stop_time,options);
     analyze_result_func(bit_error,errdiff); 
-
+    error = sum(bit_error(bit_error ~= 0));
 end
