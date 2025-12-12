@@ -1,0 +1,42 @@
+
+L = 400;
+D = 40;
+step_size = 0.00001;
+% 
+% 
+% P_u = mean(u.^2);
+% mu = (1 / (L * P_u));
+% step_size = mu;
+% 
+% error_number = nan(1, 100);
+% mus = nan(1,100);
+% 
+% for (i = 1:1:100)
+%     error_number(i) = exsim_run(L, D, step_size)
+%     step_size = step_size - 0.0005;
+%     mus(i) = step_size
+% end
+
+% [oksennus, idx] = min(error_number);
+% disp(mus(idx));
+% 
+% exsim_run(L, D, 0.0125)
+
+ % bestest mu: 0.0125
+
+error_number = nan(1, 55);
+Ls = nan(1,55);
+i = 1;
+ for (L = 5:5:1+)
+    step_size = (1 / (L * P_u)) / 2;
+    error_number(i) = exsim_run(L, D, step_size);
+    Ls(i) = L;
+    i = i + 1;
+ end
+
+[best, idx] = min(error_number);
+disp(Ls(idx));
+plot(error_number(idx))
+ % bestest L: 35
+
+
