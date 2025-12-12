@@ -43,7 +43,11 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <dcterms:created xsi:type="dcterms:W3CDTF">2025-11-26T14:04:21Z</dcterms:created>
   <dc:creator>Henri</dc:creator>
   <cp:lastModifiedBy>Henri</cp:lastModifiedBy>
+<<<<<<< HEAD
   <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-28T18:02:57Z</dcterms:modified>
+=======
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2025-11-28T18:24:31Z</dcterms:modified>
+>>>>>>> b1762394f943280cd492e94420df5314dbed3b53
   <cp:revision>1.85</cp:revision>
   <cp:version>R2025a</cp:version>
 </cp:coreProperties>
@@ -1964,8 +1968,13 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
         <P Name="LoadSaveID" Class="char">0</P>
         <P Name="Extents" Class="double">[2458.0, 1165.0]</P>
         <P Name="ZoomFactor" Class="double">0.8</P>
+<<<<<<< HEAD
         <P Name="Offset" Class="double">[-163.53454950714331, 261.05526988584086]</P>
         <P Name="SceneRectInView" Class="double">[-163.53454950714331, 261.05526988584086, 3072.5, 1456.25]</P>
+=======
+        <P Name="Offset" Class="double">[-706.82712610348517, -154.07339683410157]</P>
+        <P Name="SceneRectInView" Class="double">[-706.82712610348517, -154.07339683410157, 3072.5, 1456.25]</P>
+>>>>>>> b1762394f943280cd492e94420df5314dbed3b53
       </Object>
       <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
         <Object ObjectID="6">
