@@ -24,11 +24,22 @@
 % << Examples >>
 %    exsim_run(300,150,0.001)
 
-function [error] = exsim_run(L,D,step_size) %#ok<INUSD>
+function [n_errors, pass, cvrg, MSE] = exsim_run(L,D,step_size) %#ok<INUSD>
         
     stop_time = 1.0;
     options = simset('SrcWorkspace','current');
     sim('exsim',stop_time,options);
     analyze_result_func(bit_error,errdiff); 
-    error = sum(bit_error(bit_error ~= 0));
+
+    k = find(bit_error == 1, 1, 'last' )+1;
+    if k <= 9000
+        pass = true;
+    else 
+        pass = false;
+    end
+    cvrg = k;
+    n_errors = sum(bit_error(bit_error ~= 0));
+
+    errdiffx = errdiff(k:length(errdiff));
+    MSE = mean(errdiffx.^2);
 end

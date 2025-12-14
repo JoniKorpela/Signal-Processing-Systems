@@ -1,0 +1,2 @@
+data = squeeze(paska);
+data = data(10000:end);
