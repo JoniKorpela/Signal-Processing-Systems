@@ -8,7 +8,7 @@ step_size = 0.04867032;
 bits = string_data;
 bits = bits(:)';
 
-% Remove training pattern (for some reason there is a 4 element offset,
+% Remove training pattern (for some reason there is a 5 element offset,
 % maybe filtering delay?)
 msg_bits = bits(10005:end);
 
@@ -23,5 +23,4 @@ ascii_codes = bi2de(msg_matrix, 'left-msb');
 % Convert to string
 decoded_msg = char(ascii_codes);
 disp(decoded_msg')
-
 % On the first row, there should read "correlate"
